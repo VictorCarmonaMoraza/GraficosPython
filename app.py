@@ -57,3 +57,45 @@ def ValoresAleatorios():
     ejeY = np.random.randint(20, size=[6])
     plt.plot(ejeX,ejeY)
     plt.show()
+
+'''
+Graficas con valores predeterminados
+'''
+@app.route('/ejes6')
+def limites():
+    ahorros4 = np.random.randint(50,100, size=[6])
+    meses =['Enero','Febrero','Marxo','Abril','Mayo','Junio']
+    mapeado = range(len(meses))
+
+    plt.plot(ahorros4)  ##Añadimos el grafico
+    plt.xticks(mapeado,meses) ##Mapeamos los valores horizontales
+    plt.show()  ##Mostramos la grafica
+
+
+'''
+Graficas con valores predeterminados
+'''
+@app.route('/ejes7')
+def limitesVerticales():
+    ahorros4 = np.random.randint(50,100, size=[6])
+    meses =['Enero','Febrero','Marxo','Abril','Mayo','Junio']
+    mapeado = range(len(meses))
+
+    plt.plot(ahorros4)  ##Añadimos el grafico
+    plt.xticks(mapeado,meses) ##Mapeamos los valores horizontales
+    plt.ylim(0,100)  ##Configuramos el limite vertical
+    plt.show()  ##Mostramos la grafica
+
+
+
+
+@app.route('/ejes8')
+def limitesHorizonatales():
+    ahorros4 = np.random.randint(50,100, size=[6])
+    meses =['Enero','Febrero','Marxo','Abril','Mayo','Junio',"Julio","Agosto","Septiembre"]
+    mapeado = range(len(meses))
+
+    plt.plot(ahorros4)  ##Añadimos el grafico
+    plt.xticks(mapeado,meses) ##Mapeamos los valores horizontales
+    plt.xlim(0,4)  ##Configuramos el limite vertical
+    plt.show()  ##Mostramos la grafica
